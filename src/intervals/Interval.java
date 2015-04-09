@@ -20,7 +20,15 @@ public abstract class Interval {
 
 	public abstract boolean includes(Interval interval);
 
-	public abstract boolean intersectsWith(Interval interval);
+	public boolean intersectsWith(Interval interval) {
+		if (minimum == interval.maximum) return intersectsWithIntervalMinimum(interval);
+		if (maximum == interval.minimum) return intersectsWithIntervalMaximum(interval);
+		return intersectsWithIntervalNoBoundaries(interval);
+	}
+
+	protected abstract boolean intersectsWithIntervalMaximum(Interval interval);
+
+	protected abstract boolean intersectsWithIntervalMinimum(Interval interval);
 
 	protected boolean intersectsWithIntervalNoBoundaries(Interval interval){
 		return this.includes(interval.minimum) || this.includes(interval.maximum);

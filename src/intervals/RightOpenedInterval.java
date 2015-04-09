@@ -45,5 +45,17 @@ public class RightOpenedInterval extends Interval {
 		}
 		return intersectsWithIntervalNoBoundaries(interval);
 	}
+
+	@Override
+	protected boolean intersectsWithIntervalMaximum(Interval interval) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean intersectsWithIntervalMinimum(Interval interval) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }

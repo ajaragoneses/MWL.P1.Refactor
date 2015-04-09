@@ -20,5 +20,17 @@ public class NullInterval extends Interval {
 	public boolean includes(Interval interval){
 		return false;
 	}
+
+	@Override
+	protected boolean intersectsWithIntervalMaximum(Interval interval) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean intersectsWithIntervalMinimum(Interval interval) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }
