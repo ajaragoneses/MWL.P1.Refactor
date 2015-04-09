@@ -32,6 +32,33 @@ public class BothOpenedInterval extends Interval {
 			return false;
 		}
 	}
+	
+	private boolean includes(BothOpenedInterval interval){
+		boolean minimumIncluded = this.includes(interval.minimum);
+		boolean maximumIncluded = this.includes(interval.maximum);
+		return (minimumIncluded || minimum == interval.minimum)
+				&& (maximumIncluded || maximum == interval.maximum);
+	}
+	
+	private boolean includes(LeftOpenedInterval interval){
+		boolean minimumIncluded = this.includes(interval.minimum);
+		boolean maximumIncluded = this.includes(interval.maximum);
+		return (minimumIncluded || minimum == interval.minimum)
+				&& (maximumIncluded);
+	}
+	
+	private boolean includes(RightOpenedInterval interval){
+		boolean minimumIncluded = this.includes(interval.minimum);
+		boolean maximumIncluded = this.includes(interval.maximum);
+		return (minimumIncluded)
+				&& (maximumIncluded || maximum == interval.maximum);
+	}
+	
+	private boolean includes(UnopenedInterval interval){
+		boolean minimumIncluded = this.includes(interval.minimum);
+		boolean maximumIncluded = this.includes(interval.maximum);
+		return (minimumIncluded) && (maximumIncluded);
+	}
 
 	@Override
 	protected boolean intersectsWithIntervalMaximum(Interval interval) {
