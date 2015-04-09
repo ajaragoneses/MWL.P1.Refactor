@@ -43,8 +43,7 @@ public class RightOpenedInterval extends Interval {
 		if (maximum == interval.minimum) {
 			return false;
 		}
-		return this.includes(interval.minimum)
-				|| this.includes(interval.maximum);
+		return intersectsWithIntervalNoBoundaries(interval);
 	}
 	
 }
