@@ -33,29 +33,16 @@ public class UnopenedInterval extends Interval {
 			return false;
 		}
 	}
-	
-	@Override
-	public boolean intersectsWith(Interval interval) {
-		if (minimum == interval.maximum) {
-			return interval.opening == Opening.LEFT_OPENED ||
-				interval.opening == Opening.UNOPENED;
-		}
-		if (maximum == interval.minimum) {
-			return interval.opening == Opening.RIGHT_OPENED ||
-				interval.opening == Opening.UNOPENED;
-		}
-		return intersectsWithIntervalNoBoundaries(interval);
-	}
 
 	@Override
 	protected boolean intersectsWithIntervalMaximum(Interval interval) {
-		// TODO Auto-generated method stub
-		return false;
+		return interval.opening == Opening.RIGHT_OPENED ||
+				interval.opening == Opening.UNOPENED;
 	}
 
 	@Override
 	protected boolean intersectsWithIntervalMinimum(Interval interval) {
-		// TODO Auto-generated method stub
-		return false;
+		return interval.opening == Opening.LEFT_OPENED ||
+				interval.opening == Opening.UNOPENED;
 	}
 }
