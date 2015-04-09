@@ -35,25 +35,14 @@ public class LeftOpenedInterval extends Interval {
 	}
 	
 	@Override
-	public boolean intersectsWith(Interval interval) {
-		if (minimum == interval.maximum) return false;
-		if (maximum == interval.minimum) {
-				return interval.opening == Opening.RIGHT_OPENED ||
-						interval.opening == Opening.UNOPENED;
-		}
-		return intersectsWithIntervalNoBoundaries(interval);
+	protected boolean intersectsWithIntervalMinimum(Interval interval) {
+		return false;
 	}
 
 	@Override
 	protected boolean intersectsWithIntervalMaximum(Interval interval) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	protected boolean intersectsWithIntervalMinimum(Interval interval) {
-		// TODO Auto-generated method stub
-		return false;
+		return interval.opening == Opening.RIGHT_OPENED ||
+				interval.opening == Opening.UNOPENED;
 	}
 	
 }
