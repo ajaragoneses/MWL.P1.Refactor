@@ -1,6 +1,6 @@
 package intervals;
 
-public class Interval {
+public abstract class Interval {
 
 	protected double minimum;
 	protected double maximum;
@@ -16,13 +16,7 @@ public class Interval {
 		return (maximum + minimum) / 2;
 	}
 
-	public boolean includes(double value) {
-		switch (opening) {
-		default:
-			assert false;
-			return false;
-		}
-	}
+	public abstract boolean includes(double value);
 
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum);
