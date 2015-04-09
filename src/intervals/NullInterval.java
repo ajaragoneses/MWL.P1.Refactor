@@ -25,5 +25,25 @@ public class NullInterval extends Interval {
 	protected boolean intersectsWithIntervalMinimum(Interval interval) {
 		return false;
 	}
+
+	@Override
+	public boolean includesBothOpenedInterval(BothOpenedInterval interval) {
+		return false;
+	}
+
+	@Override
+	public boolean includesLeftOpenedInterval(LeftOpenedInterval interval) {
+		return false;
+	}
+
+	@Override
+	public boolean includesRightOpenedInterval(RightOpenedInterval interval) {
+		return false;
+	}
+
+	@Override
+	public boolean includesUnopenedInterval(UnopenedInterval interval) {
+		return false;
+	}
 	
 }
