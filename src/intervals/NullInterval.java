@@ -27,22 +27,22 @@ public class NullInterval extends Interval {
 	}
 
 	@Override
-	public boolean includesBothOpenedInterval(BothOpenedInterval interval) {
+	public boolean includes(BothOpenedInterval interval) {
 		return false;
 	}
 
 	@Override
-	public boolean includesLeftOpenedInterval(LeftOpenedInterval interval) {
+	public boolean includes(LeftOpenedInterval interval) {
 		return false;
 	}
 
 	@Override
-	public boolean includesRightOpenedInterval(RightOpenedInterval interval) {
+	public boolean includes(RightOpenedInterval interval) {
 		return false;
 	}
 
 	@Override
-	public boolean includesUnopenedInterval(UnopenedInterval interval) {
+	public boolean includes(UnopenedInterval interval) {
 		return false;
 	}
 	
