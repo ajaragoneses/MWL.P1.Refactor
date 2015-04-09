@@ -25,6 +25,15 @@ public abstract class Interval {
 		if (maximum == interval.minimum) return intersectsWithIntervalMaximum(interval);
 		return intersectsWithIntervalNoBoundaries(interval);
 	}
+	
+	
+	public abstract boolean includesBothOpenedInterval(BothOpenedInterval interval);
+	
+	public abstract boolean includesLeftOpenedInterval(LeftOpenedInterval interval);
+	
+	public abstract boolean includesRightOpenedInterval(RightOpenedInterval interval);
+	
+	public abstract boolean includesUnopenedInterval(UnopenedInterval interval);
 
 	protected abstract boolean intersectsWithIntervalMaximum(Interval interval);
 
