@@ -65,33 +65,5 @@ public class NullInterval extends Interval {
 	public boolean includesUnopenedInterval(UnopenedInterval interval) {
 		return false;
 	}
-
-	@Override
-	protected boolean checkWithBothOpenedInterval(boolean minimumIncluded,
-			boolean maximumIncluded) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	protected boolean checkWithLeftOpenedInterval(boolean minimumIncluded,
-			boolean maximumIncluded) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	protected boolean checkWithRightOpenedInterval(boolean minimumIncluded,
-			boolean maximumIncluded) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	protected boolean checkWithUnopenedInterval(boolean minimumIncluded,
-			boolean maximumIncluded) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
 }

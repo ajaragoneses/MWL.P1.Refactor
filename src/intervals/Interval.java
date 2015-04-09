@@ -34,38 +34,14 @@ public abstract class Interval {
 	
 	public abstract boolean includes(UnopenedInterval interval);
 
-	public boolean includesBothOpenedInterval(BothOpenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return checkWithBothOpenedInterval(minimumIncluded, maximumIncluded);
-	}
+	public abstract boolean includesBothOpenedInterval(BothOpenedInterval interval);
 	
-	protected abstract boolean checkWithBothOpenedInterval(boolean minimumIncluded, boolean maximumIncluded);
-
-	public boolean includesLeftOpenedInterval(LeftOpenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return checkWithLeftOpenedInterval(minimumIncluded, maximumIncluded);
-	}
+	public abstract boolean includesLeftOpenedInterval(LeftOpenedInterval interval);
 	
-	protected abstract boolean checkWithLeftOpenedInterval(boolean minimumIncluded, boolean maximumIncluded);
-
-	public boolean includesRightOpenedInterval(RightOpenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return checkWithRightOpenedInterval(minimumIncluded, maximumIncluded);
-	}
+	public abstract boolean includesRightOpenedInterval(RightOpenedInterval interval);
 	
-	protected abstract boolean checkWithRightOpenedInterval(boolean minimumIncluded, boolean maximumIncluded);
-
-	public boolean includesUnopenedInterval(UnopenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return checkWithUnopenedInterval(minimumIncluded, maximumIncluded);
-	}
+	public abstract boolean includesUnopenedInterval(UnopenedInterval interval);
 	
-	protected abstract boolean checkWithUnopenedInterval(boolean minimumIncluded, boolean maximumIncluded);
-
 	protected abstract boolean intersectsWithIntervalMaximum(Interval interval);
 
 	protected abstract boolean intersectsWithIntervalMinimum(Interval interval);
