@@ -13,49 +13,50 @@ public class LeftOpenedInterval extends Interval {
 	
 	@Override
 	public boolean includes(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		switch (interval.opening) {
-		case BOTH_OPENED:
-			return (minimumIncluded || minimum == interval.minimum)
-					&& (maximumIncluded || maximum == interval.maximum);
-		case LEFT_OPENED:
-			return (minimumIncluded || minimum == interval.minimum)
-					&& (maximumIncluded || maximum == interval.maximum);
-		case RIGHT_OPENED:
-			return (minimumIncluded)
-					&& (maximumIncluded || maximum == interval.maximum);
-		case UNOPENED:
-			return (minimumIncluded)
-					&& (maximumIncluded || maximum == interval.maximum);
-		default:
-			assert false;
-			return false;
-		}
+		return interval.includesLeftOpenedInterval(this);
+//		boolean minimumIncluded = this.includes(interval.minimum);
+//		boolean maximumIncluded = this.includes(interval.maximum);
+//		switch (interval.opening) {
+//		case BOTH_OPENED:
+//			return (minimumIncluded || minimum == interval.minimum)
+//					&& (maximumIncluded || maximum == interval.maximum);
+//		case LEFT_OPENED:
+//			return (minimumIncluded || minimum == interval.minimum)
+//					&& (maximumIncluded || maximum == interval.maximum);
+//		case RIGHT_OPENED:
+//			return (minimumIncluded)
+//					&& (maximumIncluded || maximum == interval.maximum);
+//		case UNOPENED:
+//			return (minimumIncluded)
+//					&& (maximumIncluded || maximum == interval.maximum);
+//		default:
+//			assert false;
+//			return false;
+//		}
 	}
 	
-	private boolean includes(BothOpenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return (minimumIncluded || minimum == interval.minimum)
-				&& (maximumIncluded || maximum == interval.maximum);
-	}
-	
-	private boolean includes(LeftOpenedInterval interval){
+	public boolean includesBothOpenedInterval(BothOpenedInterval interval){
 		boolean minimumIncluded = this.includes(interval.minimum);
 		boolean maximumIncluded = this.includes(interval.maximum);
 		return (minimumIncluded || minimum == interval.minimum)
 				&& (maximumIncluded || maximum == interval.maximum);
 	}
 	
-	private boolean includes(RightOpenedInterval interval){
+	public boolean includesLeftOpenedInterval(LeftOpenedInterval interval){
+		boolean minimumIncluded = this.includes(interval.minimum);
+		boolean maximumIncluded = this.includes(interval.maximum);
+		return (minimumIncluded || minimum == interval.minimum)
+				&& (maximumIncluded || maximum == interval.maximum);
+	}
+	
+	public boolean includesRightOpenedInterval(RightOpenedInterval interval){
 		boolean minimumIncluded = this.includes(interval.minimum);
 		boolean maximumIncluded = this.includes(interval.maximum);
 		return (minimumIncluded)
 				&& (maximumIncluded || maximum == interval.maximum);
 	}
 	
-	private boolean includes(UnopenedInterval interval){
+	public boolean includesUnopenedInterval(UnopenedInterval interval){
 		boolean minimumIncluded = this.includes(interval.minimum);
 		boolean maximumIncluded = this.includes(interval.maximum);
 		return (minimumIncluded)

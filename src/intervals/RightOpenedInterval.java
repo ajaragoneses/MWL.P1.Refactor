@@ -34,28 +34,28 @@ public class RightOpenedInterval extends Interval {
 		}
 	}
 
-	private boolean includes(BothOpenedInterval interval){
+	public boolean includesBothOpenedInterval(BothOpenedInterval interval){
 		boolean minimumIncluded = this.includes(interval.minimum);
 		boolean maximumIncluded = this.includes(interval.maximum);
 		return (minimumIncluded || minimum == interval.minimum)
 				&& (maximumIncluded || maximum == interval.maximum);
 	}
 	
-	private boolean includes(LeftOpenedInterval interval){
+	public boolean includesLeftOpenedInterval(LeftOpenedInterval interval){
 		boolean minimumIncluded = this.includes(interval.minimum);
 		boolean maximumIncluded = this.includes(interval.maximum);
 		return (minimumIncluded || minimum == interval.minimum)
 				&& (maximumIncluded);
 	}
 	
-	private boolean includes(RightOpenedInterval interval){
+	public boolean includesRightOpenedInterval(RightOpenedInterval interval){
 		boolean minimumIncluded = this.includes(interval.minimum);
 		boolean maximumIncluded = this.includes(interval.maximum);
 		return (minimumIncluded || minimum == interval.minimum)
 				&& (maximumIncluded || maximum == interval.maximum);
 	}
 	
-	private boolean includes(UnopenedInterval interval){
+	public boolean includesUnopenedInterval(UnopenedInterval interval){
 		boolean minimumIncluded = this.includes(interval.minimum);
 		boolean maximumIncluded = this.includes(interval.maximum);
 		return (minimumIncluded || minimum == interval.minimum)
