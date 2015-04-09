@@ -74,5 +74,33 @@ public class LeftOpenedInterval extends Interval {
 	public boolean includes(BothOpenedInterval interval) {
 		return interval.includesLeftOpenedInterval(this);
 	}
+
+	@Override
+	protected boolean checkWithBothOpenedInterval(boolean minimumIncluded,
+			boolean maximumIncluded) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean checkWithLeftOpenedInterval(boolean minimumIncluded,
+			boolean maximumIncluded) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean checkWithRightOpenedInterval(boolean minimumIncluded,
+			boolean maximumIncluded) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean checkWithUnopenedInterval(boolean minimumIncluded,
+			boolean maximumIncluded) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }
