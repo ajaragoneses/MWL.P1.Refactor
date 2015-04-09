@@ -10,11 +10,6 @@ public class NullInterval extends Interval {
 	public boolean includes(double value) {
 		return false;
 	}
-
-	@Override
-	public boolean intersectsWith(Interval interval){
-		return false;
-	}
 	
 	@Override
 	public boolean includes(Interval interval){
