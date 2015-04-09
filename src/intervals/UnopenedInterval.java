@@ -44,7 +44,6 @@ public class UnopenedInterval extends Interval {
 			return interval.opening == Opening.RIGHT_OPENED ||
 				interval.opening == Opening.UNOPENED;
 		}
-		return this.includes(interval.minimum)
-				|| this.includes(interval.maximum);
+		return intersectsWithIntervalNoBoundaries(interval);
 	}
 }
