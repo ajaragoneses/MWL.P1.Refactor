@@ -22,6 +22,10 @@ public abstract class Interval {
 
 	public abstract boolean intersectsWith(Interval interval);
 
+	protected boolean intersectsWithIntervalNoBoundaries(Interval interval){
+		return this.includes(interval.minimum) || this.includes(interval.maximum);
+	}
+	
 	@Override
 	public String toString() {
 		// TODO
