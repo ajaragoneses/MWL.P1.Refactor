@@ -23,24 +23,6 @@ public abstract class Interval {
 		boolean maximumIncluded = this.includes(interval.maximum);
 		switch (opening) {
 		
-		case UNOPENED:
-			switch (interval.opening) {
-			case BOTH_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case LEFT_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case RIGHT_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case UNOPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			default:
-				assert false;
-				return false;
-			}
 		default:
 			assert false;
 			return false;
