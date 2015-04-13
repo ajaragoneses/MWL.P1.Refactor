@@ -1,32 +1,6 @@
 package intervals;
 
 public class OpenPoint extends Point{
-
-	@Override
-	public boolean isLessThan(Point point) {
-		return point.isGreatherThan(this);
-	}
-	
-	public boolean isLessThan(OpenPoint point){
-		return value < point.getValue();
-	}
-	
-	public boolean isLessThan(ClosePoint point){
-		return value < point.getValue();
-	}
-
-	@Override
-	public boolean isGreatherThan(Point point) {
-		return point.isLessThan(this);
-	}
-
-	public boolean isGreatherThan(OpenPoint point) {
-		return value > point.getValue();
-	}
-	
-	public boolean isGreatherThan(ClosePoint point) {
-		return value > point.getValue();
-	}
 	
 	@Override
 	public boolean isLessOrEqualThan(Point point) {
