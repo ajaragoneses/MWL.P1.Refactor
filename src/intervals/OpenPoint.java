@@ -2,19 +2,45 @@ package intervals;
 
 public class OpenPoint extends Point{
 	
-	private boolean isLessOrEqualGeneric(Point point){
-		if(value == point.value) return false;
+	public OpenPoint(Double value) {
+		super(value);
+	}
+	
+	public boolean isLessThan(Point point) {
+		return point.isGreatherOrEqualThan(this);
+	}
+	
+	public boolean isLessThan(OpenPoint point){
 		return value < point.getValue();
 	}
 	
-	private boolean isGreatherOrEqualGeneric(Point point){
-		if(value == point.value) return false;
+	public boolean isLessThan(ClosePoint point){
 		return value < point.getValue();
+	}
+
+	public boolean isGreatherThan(Point point) {
+		return point.isLessOrEqualThan(this);
+	}
+
+	public boolean isGreatherThan(OpenPoint point) {
+		return value > point.getValue();
+	}
+	
+	public boolean isGreatherThan(ClosePoint point) {
+		return value > point.getValue();
+	}
+	
+	private boolean isLessOrEqualGeneric(Point point){
+		return value <= point.getValue();
+	}
+	
+	private boolean isGreatherOrEqualGeneric(Point point){
+		return value >= point.getValue();
 	}
 	
 	@Override
 	public boolean isLessOrEqualThan(Point point) {
-		return point.isGreatherOrEqualThan(this);
+		return point.isGreatherOrEqualThan((OpenPoint)this);
 	}
 	
 	public boolean isLessOrEqualThan(OpenPoint point) {
@@ -27,7 +53,7 @@ public class OpenPoint extends Point{
 
 	@Override
 	public boolean isGreatherOrEqualThan(Point point) {
-		return point.isLessOrEqualThan(this);
+		return point.isLessOrEqualThan((OpenPoint)this);
 	}
 	
 	public boolean isGreatherOrEqualThan(OpenPoint point) {
