@@ -14,6 +14,8 @@ public abstract class Point {
 	
 	public abstract boolean isLessThan(Point point);
 	public abstract boolean isGreatherThan(Point point);
+	public abstract boolean isLessOrEqualThan(Point point);
+	public abstract boolean isGreatherOrEqualThan(Point point);
 	
 	
 }
