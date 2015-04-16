@@ -23,10 +23,6 @@ public abstract class Interval {
 		if (MinimumPoint.getValue() == interval.MaximumPoint.getValue()) return intersectsWithIntervalMinimum(interval);
 		if (MaximumPoint.getValue() == interval.MinimumPoint.getValue()) return intersectsWithIntervalMaximum(interval);
 		return intersectsWithIntervalNoBoundaries(interval);
-		
-//		if (minimum == interval.maximum) return intersectsWithIntervalMinimum(interval);
-//		if (maximum == interval.minimum) return intersectsWithIntervalMaximum(interval);
-//		return intersectsWithIntervalNoBoundaries(interval);
 	}
 	
 	public Point getMinimumPoint() {

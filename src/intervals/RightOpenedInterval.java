@@ -10,40 +10,33 @@ public class RightOpenedInterval extends Interval {
 
 	@Override
 	public boolean includes(double value){
-		return minimum <= value && value < maximum;
+		return MinimumPoint.getValue() <= value && value < MaximumPoint.getValue();
 	}
 	
 	@Override
 	public boolean includes(Interval interval) {
-		return interval.includes(this);
+		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint()) 
+				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
 	}
 
 	public boolean includesBothOpenedInterval(BothOpenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return (minimumIncluded || minimum == interval.minimum)
-				&& (maximumIncluded || maximum == interval.maximum);
+		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint()) 
+				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
 	}
 	
 	public boolean includesLeftOpenedInterval(LeftOpenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return (minimumIncluded || minimum == interval.minimum)
-				&& (maximumIncluded);
+		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint())
+				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
 	}
 	
 	public boolean includesRightOpenedInterval(RightOpenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return (minimumIncluded || minimum == interval.minimum)
-				&& (maximumIncluded || maximum == interval.maximum);
+		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint())
+				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
 	}
 	
 	public boolean includesUnopenedInterval(UnopenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return (minimumIncluded || minimum == interval.minimum)
-				&& (maximumIncluded);
+		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint())
+				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
 	}
 	
 	@Override

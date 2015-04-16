@@ -15,7 +15,8 @@ public class LeftOpenedInterval extends Interval {
 	
 	@Override
 	public boolean includes(Interval interval) {
-		return interval.includes(this);
+		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint()) 
+				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
 	}
 	
 	public boolean includesBothOpenedInterval(BothOpenedInterval interval){
