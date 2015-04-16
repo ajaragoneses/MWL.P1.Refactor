@@ -26,44 +26,4 @@ public class NullInterval extends Interval {
 		return false;
 	}
 
-	@Override
-	public boolean includes(BothOpenedInterval interval) {
-		return false;
-	}
-
-	@Override
-	public boolean includes(LeftOpenedInterval interval) {
-		return false;
-	}
-
-	@Override
-	public boolean includes(RightOpenedInterval interval) {
-		return false;
-	}
-
-	@Override
-	public boolean includes(UnopenedInterval interval) {
-		return false;
-	}
-
-	@Override
-	public boolean includesBothOpenedInterval(BothOpenedInterval interval) {
-		return false;
-	}
-
-	@Override
-	public boolean includesLeftOpenedInterval(LeftOpenedInterval interval) {
-		return false;
-	}
-
-	@Override
-	public boolean includesRightOpenedInterval(RightOpenedInterval interval) {
-		return false;
-	}
-
-	@Override
-	public boolean includesUnopenedInterval(UnopenedInterval interval) {
-		return false;
-	}
-	
 }

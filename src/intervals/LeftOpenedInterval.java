@@ -19,33 +19,7 @@ public class LeftOpenedInterval extends Interval {
 				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
 	}
 	
-	public boolean includesBothOpenedInterval(BothOpenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return (minimumIncluded || minimum == interval.minimum)
-				&& (maximumIncluded || maximum == interval.maximum);
-	}
 	
-	public boolean includesLeftOpenedInterval(LeftOpenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return (minimumIncluded || minimum == interval.minimum)
-				&& (maximumIncluded || maximum == interval.maximum);
-	}
-	
-	public boolean includesRightOpenedInterval(RightOpenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return (minimumIncluded)
-				&& (maximumIncluded || maximum == interval.maximum);
-	}
-	
-	public boolean includesUnopenedInterval(UnopenedInterval interval){
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		return (minimumIncluded)
-				&& (maximumIncluded || maximum == interval.maximum);
-	}
 	
 	@Override
 	protected boolean intersectsWithIntervalMinimum(Interval interval) {
@@ -56,26 +30,6 @@ public class LeftOpenedInterval extends Interval {
 	protected boolean intersectsWithIntervalMaximum(Interval interval) {
 		return interval.opening == Opening.RIGHT_OPENED ||
 				interval.opening == Opening.UNOPENED;
-	}
-
-	@Override
-	public boolean includes(LeftOpenedInterval interval) {
-		return interval.includesLeftOpenedInterval(this);
-	}
-
-	@Override
-	public boolean includes(RightOpenedInterval interval) {
-		return interval.includesLeftOpenedInterval(this);
-	}
-
-	@Override
-	public boolean includes(UnopenedInterval interval) {
-		return interval.includesLeftOpenedInterval(this);
-	}
-
-	@Override
-	public boolean includes(BothOpenedInterval interval) {
-		return interval.includesLeftOpenedInterval(this);
 	}
 	
 }

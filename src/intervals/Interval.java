@@ -46,27 +46,6 @@ public abstract class Interval {
 	public abstract boolean includes(Interval interval);
 	
 	
-	
-	public abstract boolean includes(BothOpenedInterval interval);
-	
-	public abstract boolean includes(LeftOpenedInterval interval);
-	
-	public abstract boolean includes(RightOpenedInterval interval);
-	
-	public abstract boolean includes(UnopenedInterval interval);
-	
-	
-
-	public abstract boolean includesBothOpenedInterval(BothOpenedInterval interval);
-	
-	public abstract boolean includesLeftOpenedInterval(LeftOpenedInterval interval);
-	
-	public abstract boolean includesRightOpenedInterval(RightOpenedInterval interval);
-	
-	public abstract boolean includesUnopenedInterval(UnopenedInterval interval);
-	
-	
-	
 	protected abstract boolean intersectsWithIntervalMaximum(Interval interval);
 
 	protected abstract boolean intersectsWithIntervalMinimum(Interval interval);

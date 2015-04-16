@@ -19,25 +19,6 @@ public class RightOpenedInterval extends Interval {
 				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
 	}
 
-	public boolean includesBothOpenedInterval(BothOpenedInterval interval){
-		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint()) 
-				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
-	}
-	
-	public boolean includesLeftOpenedInterval(LeftOpenedInterval interval){
-		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint())
-				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
-	}
-	
-	public boolean includesRightOpenedInterval(RightOpenedInterval interval){
-		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint())
-				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
-	}
-	
-	public boolean includesUnopenedInterval(UnopenedInterval interval){
-		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint())
-				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
-	}
 	
 	@Override
 	protected boolean intersectsWithIntervalMaximum(Interval interval) {
@@ -50,24 +31,6 @@ public class RightOpenedInterval extends Interval {
 				interval.opening == Opening.UNOPENED;
 	}
 
-	@Override
-	public boolean includes(BothOpenedInterval interval) {
-		return interval.includesRightOpenedInterval(this);
-	}
 
-	@Override
-	public boolean includes(LeftOpenedInterval interval) {
-		return interval.includesRightOpenedInterval(this);
-	}
-
-	@Override
-	public boolean includes(RightOpenedInterval interval) {
-		return interval.includesRightOpenedInterval(this);
-	}
-
-	@Override
-	public boolean includes(UnopenedInterval interval) {
-		return interval.includesRightOpenedInterval(this);
-	}
 	
 }
