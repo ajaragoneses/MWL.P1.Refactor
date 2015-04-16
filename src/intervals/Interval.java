@@ -43,7 +43,10 @@ public abstract class Interval {
 
 	public abstract boolean includes(double value);
 
-	public abstract boolean includes(Interval interval);
+	public boolean includes(Interval interval){
+		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint()) 
+				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
+	}
 	
 	
 	protected abstract boolean intersectsWithIntervalMaximum(Interval interval);
