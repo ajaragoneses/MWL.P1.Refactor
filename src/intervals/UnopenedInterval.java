@@ -14,13 +14,6 @@ public class UnopenedInterval extends Interval {
 	}
 	
 	@Override
-	public boolean includes(Interval interval) {
-		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint()) 
-				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
-	}
-
-	
-	@Override
 	protected boolean intersectsWithIntervalMaximum(Interval interval) {
 		return interval.opening == Opening.RIGHT_OPENED ||
 				interval.opening == Opening.UNOPENED;

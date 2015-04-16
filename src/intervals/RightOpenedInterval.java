@@ -12,12 +12,6 @@ public class RightOpenedInterval extends Interval {
 	public boolean includes(double value){
 		return MinimumPoint.getValue() <= value && value < MaximumPoint.getValue();
 	}
-	
-	@Override
-	public boolean includes(Interval interval) {
-		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint()) 
-				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
-	}
 
 	
 	@Override

@@ -14,14 +14,6 @@ public class LeftOpenedInterval extends Interval {
 	}
 	
 	@Override
-	public boolean includes(Interval interval) {
-		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint()) 
-				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
-	}
-	
-	
-	
-	@Override
 	protected boolean intersectsWithIntervalMinimum(Interval interval) {
 		return false;
 	}

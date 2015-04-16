@@ -13,11 +13,6 @@ public class BothOpenedInterval extends Interval {
 		return  MinimumPoint.getValue() < value && value < MaximumPoint.getValue();
 	}
 
-	@Override
-	public boolean includes(Interval interval){
-		return MinimumPoint.isLessThan(interval.getMinimumPoint()) 
-				&& MaximumPoint.isGreatherThan(interval.getMaximumPoint());
-	}
 
 	@Override
 	protected boolean intersectsWithIntervalMaximum(Interval interval) {
