@@ -12,19 +12,4 @@ public class RightOpenedInterval extends Interval {
 	public boolean includes(double value){
 		return MinimumPoint.getValue() <= value && value < MaximumPoint.getValue();
 	}
-
-	
-	@Override
-	protected boolean intersectsWithIntervalMaximum(Interval interval) {
-		return false;
-	}
-
-	@Override
-	protected boolean intersectsWithIntervalMinimum(Interval interval) {
-		return interval.opening == Opening.LEFT_OPENED ||
-				interval.opening == Opening.UNOPENED;
-	}
-
-
-	
 }

@@ -11,17 +11,5 @@ public class LeftOpenedInterval extends Interval {
 	@Override
 	public boolean includes(double value){
 		return minimum < value && value <= maximum;
-	}
-	
-	@Override
-	protected boolean intersectsWithIntervalMinimum(Interval interval) {
-		return false;
-	}
-
-	@Override
-	protected boolean intersectsWithIntervalMaximum(Interval interval) {
-		return interval.opening == Opening.RIGHT_OPENED ||
-				interval.opening == Opening.UNOPENED;
-	}
-	
+	}	
 }

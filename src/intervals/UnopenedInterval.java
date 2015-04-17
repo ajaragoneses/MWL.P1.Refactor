@@ -12,16 +12,4 @@ public class UnopenedInterval extends Interval {
 	public boolean includes(double value){
 		return minimum <= value && value <= maximum;
 	}
-	
-	@Override
-	protected boolean intersectsWithIntervalMaximum(Interval interval) {
-		return interval.opening == Opening.RIGHT_OPENED ||
-				interval.opening == Opening.UNOPENED;
-	}
-
-	@Override
-	protected boolean intersectsWithIntervalMinimum(Interval interval) {
-		return interval.opening == Opening.LEFT_OPENED ||
-				interval.opening == Opening.UNOPENED;
-	}
 }

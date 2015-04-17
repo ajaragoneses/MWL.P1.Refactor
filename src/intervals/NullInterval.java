@@ -15,15 +15,4 @@ public class NullInterval extends Interval {
 	public boolean includes(Interval interval){
 		return false;
 	}
-
-	@Override
-	protected boolean intersectsWithIntervalMaximum(Interval interval) {
-		return false;
-	}
-
-	@Override
-	protected boolean intersectsWithIntervalMinimum(Interval interval) {
-		return false;
-	}
-
 }

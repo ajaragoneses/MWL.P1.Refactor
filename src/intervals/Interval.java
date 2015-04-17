@@ -21,8 +21,7 @@ public abstract class Interval {
 
 	public boolean intersectsWith(Interval interval) {
 		if (MinimumPoint.getValue() == interval.MaximumPoint.getValue()) return MinimumPoint.intersects(interval.getMaximumPoint());
-//			return intersectsWithIntervalMinimum(interval);
-		if (MaximumPoint.getValue() == interval.MinimumPoint.getValue()) return intersectsWithIntervalMaximum(interval);
+		if (MaximumPoint.getValue() == interval.MinimumPoint.getValue()) return MaximumPoint.intersects(interval.getMinimumPoint());
 		return intersectsWithIntervalNoBoundaries(interval);
 	}
 	
@@ -48,11 +47,6 @@ public abstract class Interval {
 		return MinimumPoint.isLessOrEqualThan(interval.getMinimumPoint()) 
 				&& MaximumPoint.isGreatherOrEqualThan(interval.getMaximumPoint());
 	}
-	
-	
-	protected abstract boolean intersectsWithIntervalMaximum(Interval interval);
-
-	protected abstract boolean intersectsWithIntervalMinimum(Interval interval);
 
 	protected boolean intersectsWithIntervalNoBoundaries(Interval interval){
 		return this.includes(interval.MinimumPoint.getValue()) || this.includes(interval.MaximumPoint.getValue());
