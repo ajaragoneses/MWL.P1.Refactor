@@ -6,30 +6,6 @@ public class OpenPoint extends Point{
 		super(value);
 	}
 	
-	public boolean isLessThan(Point point) {
-		return point.isGreatherOrEqualThan(this);
-	}
-	
-	public boolean isLessThan(OpenPoint point){
-		return value < point.getValue();
-	}
-	
-	public boolean isLessThan(ClosePoint point){
-		return value < point.getValue();
-	}
-
-	public boolean isGreatherThan(Point point) {
-		return point.isLessOrEqualThan(this);
-	}
-
-	public boolean isGreatherThan(OpenPoint point) {
-		return value > point.getValue();
-	}
-	
-	public boolean isGreatherThan(ClosePoint point) {
-		return value > point.getValue();
-	}
-	
 	private boolean isLessOrEqualGeneric(Point point){
 		return value <= point.getValue();
 	}

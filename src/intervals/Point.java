@@ -16,13 +16,6 @@ public abstract class Point {
 		this.value = value;
 	}
 	
-	
-	public abstract boolean isLessThan(Point point);
-	public abstract boolean isLessThan(OpenPoint point);
-	public abstract boolean isLessThan(ClosePoint point);
-	public abstract boolean isGreatherThan(Point point);
-	public abstract boolean isGreatherThan(OpenPoint point);
-	public abstract boolean isGreatherThan(ClosePoint point);
 	public abstract boolean isLessOrEqualThan(Point point);
 	public abstract boolean isLessOrEqualThan(OpenPoint point);
 	public abstract boolean isLessOrEqualThan(ClosePoint point);
