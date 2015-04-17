@@ -4,15 +4,13 @@ public abstract class Interval {
 
 	protected double minimum;
 	protected double maximum;
-	protected Opening opening;
 	
 	protected Point MinimumPoint;
 	protected Point MaximumPoint;
 
-	public Interval(double minimum, double maximum, Opening opening) {
+	public Interval(double minimum, double maximum) {
 		this.minimum = minimum;
 		this.maximum = maximum;
-		this.opening = opening;
 	}
 
 	public double midPoint() {

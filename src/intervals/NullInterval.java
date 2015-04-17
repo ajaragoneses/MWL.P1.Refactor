@@ -2,8 +2,8 @@ package intervals;
 
 public class NullInterval extends Interval {
 
-	public NullInterval(double minimum, double maximum, Opening opening) {
-		super(minimum, maximum, opening);
+	public NullInterval(double minimum, double maximum) {
+		super(minimum, maximum);
 	}
 
 	@Override
